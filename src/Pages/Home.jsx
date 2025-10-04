@@ -13,7 +13,7 @@ const Home = () => {
           <div className="max-w-2xl ">
             <h1 className="text-5xl md:text-7xl font-black tracking-tight drop-shadow-lg text-white/90 hover:text-[#5fa2fa] duration-300 "
               onClick={() => { naviagte('/explore/Superman') }}
-            >SUPERMAN 2025</h1>
+            >SUPERMAN</h1>
             <div className="flex items-center space-x-4 mt-4 mb-6">
               <div className="flex items-center space-x-1">
                 <span className="text-xl font-bold text-white/90"></span>
