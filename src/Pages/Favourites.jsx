@@ -22,9 +22,10 @@ const Favourites = () => {
 
   return (
     <div className='flex w-full flex-col items-center bg-greeen-500 p-4 sm:p-6 md:p-8'>
-      <section className='grid sm:w-full sm:max-w-8xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 beg-blue-500 sm:pl-16 '>
+      <section className='grid sm:w-full sm:max-w-8xl grid-cols-2 gap-6  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:pl-16 '>
         {favouritesList.map((movie) => (
           <Card
+            visiblity={1}
             key={movie.id}
             id={movie.id}
             title={movie.title}

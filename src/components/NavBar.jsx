@@ -60,8 +60,8 @@ const NavBar = () => {
                     {
                         dropdownFlag && (
                             <motion.div
-                                initial={{ opacity: 1, y: -0, x: 10 }}
-                                whileInView={{ opacity: 1, x: -10 }}
+                                initial={{ opacity: 0.6, y: -0, x: 10 }}
+                                whileInView={{ opacity: 1, x: -5 }}
                                 transition={{
                                     delay: 0.1,
                                     duration: 0.3,

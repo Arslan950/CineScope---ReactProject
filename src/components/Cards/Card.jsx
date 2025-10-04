@@ -12,13 +12,12 @@ export default function ProgressiveBlurHover(
     title,
     poster,
     rating,
+    visiblity
   }
 ) {
   const [isHover, setIsHover] = useState(false);
 
   const naviagte = useNavigate()
-
-
   
   return (
     <div
@@ -27,7 +26,7 @@ export default function ProgressiveBlurHover(
         naviagte(`/explore/${encodeURIComponent(title)}`)
 
       }}
-      className='relative my-4 aspect-square sm:h-[360px] sm:w-[260px] h-[260px] w-[190px] overflow-hidden sm:rounded-3xl rounded-2xl dark:ring-1 dark:ring-white/75 ring-1 ring-black'
+      className='relative my-4 aspect-square sm:h-[360px] sm:w-[260px] h-[260px] w-[190px] overflow-hidden sm:rounded-3xl rounded-2xl dark:ring-1 dark:ring-white/75 ring-1 ring-black '
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -65,7 +64,7 @@ export default function ProgressiveBlurHover(
         className='absolute bottom-0 right-0'
         animate={isHover ? 'visible' : 'hidden'}
         variants={{
-          hidden: { opacity: 0 },
+          hidden: { opacity: visiblity },
           visible: { opacity: 1 },
         }}
         transition={{ duration: 0.2, ease: 'easeOut' }}

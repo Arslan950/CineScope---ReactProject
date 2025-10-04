@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { AnimatedSubscribeButton } from '../../components/ui/AnimatedButton'
 import MoviesDetailsSkeletons from '../../components/skeletons/MoviesDetailsSkeleton'
 import ChevronRightIcon from '../../components/icons/ChevronRightIcon'
@@ -21,13 +21,15 @@ const MovieDescription = () => {
   const [isFavourited, setIsFavourited] = useState(false);
   const { favouritesList } = useFavourites();
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+  const scrollTargetRef = useRef(null);
+
 
 
   useEffect(() => {
     setloading(true);
     const getData = async () => {
       try {
-        const response = await axios.get(`http://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
+        const response = await axios.get(`https://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
         setmovieData(response.data);
       } catch (error) {
         console.log("error fetching data ", error);
@@ -36,7 +38,7 @@ const MovieDescription = () => {
       }
     };
     getData();
-  }, [title, apiKey]); 
+  }, [title, apiKey]);
 
   useEffect(() => {
     if (movieData && movieData.Title) {
@@ -47,6 +49,11 @@ const MovieDescription = () => {
     }
   }, [favouritesList, movieData]);
 
+  useEffect(() => {
+    if (scrollTargetRef.current) {
+      scrollTargetRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [movieData.Title]);
 
   if (loading) {
     return (
@@ -73,11 +80,11 @@ const MovieDescription = () => {
 
   return (
     <>
-      <SearchBar />
-      <div className="text-slate-900 dark:text-white font-sans p-6 sm:p-8 lg:p-12 ">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 lg:gap-12 ">
+      <SearchBar className='sm:mt-8 mt-6 sm:mb-0 mb-3' classNameforIcon='sm:top-14 top-12' classNameforButton='sm:top-14 top-12' />
+      <div className="text-slate-900 dark:text-white font-sans p-6 sm:p-8 lg:p-12 " >
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 lg:gap-12 " ref={scrollTargetRef}>
 
-          <div className="flex-shrink-0 w-full md:w-1/3">
+          <div className="flex-shrink-0 w-full md:w-1/3 ">
             <img
               src={movieData?.Poster}
               alt='Poster not found'
