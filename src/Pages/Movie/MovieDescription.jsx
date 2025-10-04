@@ -20,12 +20,12 @@ const MovieDescription = () => {
   const navigate = useNavigate();
   const [isFavourited, setIsFavourited] = useState(false);
   const { favouritesList } = useFavourites();
-
+  const apiKey = import.meta.env.VITE_OMDB_API_KEY ; 
   useEffect(() => {
     setloading(true); 
     const getData = async () => {
       try {
-        const response = await axios.get(`http://www.omdbapi.com/?t=${title}&apikey=b8f7a816`);
+        const response = await axios.get(`http://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
         setmovieData(response.data)
       } catch (error) {
         console.log("error fetching data ", error)
