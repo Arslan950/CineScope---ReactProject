@@ -1,3 +1,10 @@
+# Dependencies
+/node_modules
+
+# Build folder
+/dist
+/dist-ssr
+
 # Logs
 logs
 *.log
@@ -7,18 +14,25 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Vite build logs
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Environment variables
+.env
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Optional caches
+.npm
+.eslintcache
+.stylelintcache
+.cache
+.parcel-cache
+.svelte-kit/
