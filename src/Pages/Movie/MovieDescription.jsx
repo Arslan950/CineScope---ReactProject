@@ -16,33 +16,39 @@ import { useFavourites } from '../../context/favourites'
 const MovieDescription = () => {
   const { title } = useParams();
   const [movieData, setmovieData] = useState({});
-  const [loading, setloading] = useState(true); 
+  const [loading, setloading] = useState(true);
   const navigate = useNavigate();
   const [isFavourited, setIsFavourited] = useState(false);
   const { favouritesList } = useFavourites();
-  const apiKey = import.meta.env.VITE_OMDB_API_KEY ; 
+  const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+
+
   useEffect(() => {
-    setloading(true); 
+    setloading(true);
     const getData = async () => {
       try {
         const response = await axios.get(`http://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
-        setmovieData(response.data)
+        setmovieData(response.data);
       } catch (error) {
-        console.log("error fetching data ", error)
+        console.log("error fetching data ", error);
+      } finally {
+        setloading(false);
       }
-      finally {
-        setloading(false); 
-      }
-    }
+    };
     getData();
-  }, [title])
+  }, [title, apiKey]); 
 
   useEffect(() => {
-    const isinFavourited = favouritesList.some((movie) => movie.title === title);
-    setIsFavourited(isinFavourited);
-  }, [favouritesList, title]);
+    if (movieData && movieData.Title) {
+      const isMovieInFavourites = favouritesList.some(
+        (movie) => movie.title === movieData.Title
+      );
+      setIsFavourited(isMovieInFavourites);
+    }
+  }, [favouritesList, movieData]);
 
-  if (loading) { 
+
+  if (loading) {
     return (
       <MoviesDetailsSkeletons />
     )
@@ -112,7 +118,6 @@ const MovieDescription = () => {
                 poster={movieData.Poster}
                 rating={movieData?.Ratings?.[0]?.Value}
                 id={favouritesList.find(m => m.title === movieData?.Title)?.id}
-                onClick={() => setIsFavourited(!isFavourited)}
               >
                 <AnimatedSubscribeButton
                   className={`bg-[#5fa2fa] text-white`}

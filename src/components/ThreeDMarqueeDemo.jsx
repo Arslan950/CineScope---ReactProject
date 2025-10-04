@@ -31,7 +31,7 @@ export function ThreeDMarqueeDemo() {
                     </motion.button>
                 </div>
                 <div
-                    className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40 " />
+                    className="absolute inset-0 z-10 h-full w-full bg-black/60 dark:bg-black/40 " />
                 <ThreeDMarquee
                     className="pointer-events-none absolute inset-0 h-full w-full bg-slate-100 dark:bg-[#111826]  sm:block hidden"
                     images={images} />
