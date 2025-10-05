@@ -10,19 +10,27 @@ export const Trending = [
         title: "The Conjuring: Last Rites",
         rating: "6.7/10",
         poster: "https://m.media-amazon.com/images/M/MV5BM2VmMzRkYzgtMzg2ZC00OTFkLTkwMTYtNTMxNjM2YzI1MjgyXkEyXkFqcGc@._V1_SX300.jpg",
+    },    
+    {
+        id : Date.now(),
+        title: "The Fantastic Four: First Steps",
+        rating: "7.3/10",
+        poster : "https://m.media-amazon.com/images/M/MV5BOGM5MzA3MDAtYmEwMi00ZDNiLTg4MDgtMTZjOTc0ZGMyNTIwXkEyXkFqcGc@._V1_SX300.jpg"
     },
     {
         id : Date.now(),
         title: "Weapons",
         rating: "7.6/10",
         poster: "https://m.media-amazon.com/images/M/MV5BNTBhNWJjZWItYzY3NS00M2NkLThmOWYtYTlmNzBmN2UxZWFjXkEyXkFqcGc@._V1_SX300.jpg",
-    },
+    },    
+
     {
         id : Date.now(),
         title: "Ballerina",
         rating: "6.9/10",
         poster: "https://m.media-amazon.com/images/M/MV5BNzdhZmY2OTQtYWI4OC00ZThkLTlhZjAtNzE2YzRjM2Q5YjJlXkEyXkFqcGc@._V1_SX300.jpg",
     }
+
 ];
 
 export const Bollywood = [
@@ -43,6 +51,12 @@ export const Bollywood = [
         title: "Dangal",
         rating: "8.3/10",
         poster: "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SX300.jpg"
+    },
+    {
+        id : Date.now(),
+        title : "Karthik Calling Karthik",
+        rating : "7.1/10",
+        poster : "https://m.media-amazon.com/images/M/MV5BMTg4NzUyNDExMl5BMl5BanBnXkFtZTcwOTg3NTk5Mw@@._V1_SX300.jpg"
     },
     {
         id : Date.now(),
@@ -76,6 +90,12 @@ export const webseries = [
         title: "Panchayat",
         rating: "9.0/10",
         poster: "https://m.media-amazon.com/images/M/MV5BYzkwZGNkYTctZDc2MS00OWM2LWI2NTUtMTM2ZGMzMTY0N2Q1XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+        id : Date.now(),
+        title : "From",
+        rating : "7.8/10",
+        poster : "https://m.media-amazon.com/images/M/MV5BYzM5ZWMxOGEtZjEyMC00YjQ0LThiYjEtZjVkZGEzN2NlOGEwXkEyXkFqcGc@._V1_SX300.jpg"
     }
 ];
 

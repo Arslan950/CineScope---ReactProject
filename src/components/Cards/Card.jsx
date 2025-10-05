@@ -2,31 +2,21 @@
 
 import { useState } from 'react';
 import { ProgressiveBlur } from '../ui/progressive-blur';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'; // Corrected the import for motion
 import { useNavigate } from 'react-router-dom';
 import HeartFavourites from './HeartFavourites';
 
-export default function ProgressiveBlurHover(
-  {
-    id,
-    title,
-    poster,
-    rating,
-    visiblity
-  }
-) {
+export default function Card({ id, title, poster, rating, visiblity }) {
   const [isHover, setIsHover] = useState(false);
+  const naviagte = useNavigate();
 
-  const naviagte = useNavigate()
-  
   return (
     <div
       onClick={(e) => {
-        e.preventDefault()
-        naviagte(`/explore/${encodeURIComponent(title)}`)
-
+        e.preventDefault();
+        naviagte(`/explore/${encodeURIComponent(title)}`);
       }}
-      className='relative my-4 aspect-square sm:h-[360px] sm:w-[260px] h-[260px] w-[190px] overflow-hidden sm:rounded-3xl rounded-2xl dark:ring-1 dark:ring-white/75 ring-1 ring-black '
+      className='relative my-4 flex-shrink-0 sm:h-[340px] sm:w-[240px] h-[245px] w-[175px] overflow-hidden sm:rounded-3xl rounded-2xl dark:ring-1 dark:ring-white/75 ring-1 ring-black'
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -36,7 +26,7 @@ export default function ProgressiveBlurHover(
         className='absolute inset-0 h-full w-full object-cover'
       />
       <ProgressiveBlur
-        className='pointer-events-none absolute bottom-0 left-0 h-[75%] w-full rounded-3xl '
+        className='pointer-events-none absolute bottom-0 left-0 h-[75%] w-full rounded-3xl'
         blurIntensity={1}
         animate={isHover ? 'visible' : 'hidden'}
         variants={{
@@ -59,7 +49,6 @@ export default function ProgressiveBlurHover(
           <span className='text-white'>⭐ {rating}</span>
         </div>
       </motion.div>
-
       <motion.div
         className='absolute bottom-0 right-0'
         animate={isHover ? 'visible' : 'hidden'}
@@ -70,7 +59,7 @@ export default function ProgressiveBlurHover(
         transition={{ duration: 0.2, ease: 'easeOut' }}
       >
         <div className='px-5 py-3'>
-          <HeartFavourites id={id} title={title} poster={poster} rating={rating}/>
+          <HeartFavourites id={id} title={title} poster={poster} rating={rating} />
         </div>
       </motion.div>
     </div>
