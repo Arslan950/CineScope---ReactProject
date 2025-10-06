@@ -90,4 +90,4 @@ Make sure you have Node.js and npm installed on your machine.
 
 Arslan - arslan48950@gmail.com
 
-Project Link: [https://github.com/Arslan950/CineScope---ReactProject](https://github.com/Arslan950/CineScope---ReactProject)
+Project Link: [https://cinescope-liart-eight.vercel.app/](https://cinescope-liart-eight.vercel.app/)
