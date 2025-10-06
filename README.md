@@ -1,12 +1,58 @@
-# React + Vite
+# CineScope
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineScope is a sleek and modern web application designed for movie enthusiasts. It offers a rich user interface for discovering, searching, and managing your favorite films. With its intuitive design and powerful features, CineScope provides a seamless experience for exploring the world of cinema.
 
-Currently, two official plugins are available:
+## **Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Modern UI/UX:** A visually appealing and user-friendly interface that enhances the movie browsing experience.
+* **Movie Discovery:** Explore a comprehensive database of movies, including detailed information, ratings, and posters.
+* **Advanced Search:** Easily find any movie with the powerful and intuitive search functionality.
+* **Favorites Management:** Create a personalized collection of your favorite movies and manage them with ease.
+* **Theming:** Switch between **light and dark modes** for a comfortable viewing experience in any lighting condition.
+* **Responsive Design:** Enjoy a fully responsive layout that works seamlessly on desktops, tablets, and mobile devices.
 
-## Expanding the ESLint configuration
+## **Technologies Used**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React:** A JavaScript library for building user interfaces.
+* **React Router:** For handling client-side routing.
+* **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+* **Framer Motion:** For creating fluid and complex animations.
+* **OMDb API:** To fetch detailed movie information.
+
+## **Getting Started**
+
+To get a local copy up and running, follow these simple steps.
+
+### **Prerequisites**
+
+Make sure you have Node.js and npm installed on your machine.
+
+* npm
+    ```sh
+    npm install npm@latest -g
+    ```
+
+### **Installation**
+
+1.  Clone the repo
+    ```sh
+    git clone [https://github.com/your_username_/CineScope.git](https://github.com/your_username_/CineScope.git)
+    ```
+2.  Install NPM packages
+    ```sh
+    npm install
+    ```
+3.  Enter your API in a `.env` file
+    ```JS
+    VITE_OMDB_API_KEY = 'YOUR API'
+    ```
+4.  Run the application
+    ```sh
+    npm run dev
+    ```
+
+## **Contact**
+
+Arslan - arslan48950@gmail.com
+
+Project Link: [https://github.com/your_username_/CineScope](https://github.com/your_username_/CineScope)
