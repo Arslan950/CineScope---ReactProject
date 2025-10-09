@@ -9,8 +9,8 @@ const NotFound = () => {
             <motion.button 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={()  => navigate('/')}
-                className='bg-[#5fa2fa] text-white font-semibold sm:text-lg sm:p-3 p-1.5 rounded-xl hover:bg-white hover:text-blue-500 duration-300'         
+                onClick={()  => navigate('/home')}
+                className='bg-[#5fa2fa] text-white font-semibold sm:text-lg sm:p-3 p-1.5 rounded-xl '         
             >
                 Go back to Home
             </motion.button>

@@ -14,7 +14,7 @@ const CardSection = ({ movieList, name }) => {
           movieList.map((movie) => (
             <Card
               visiblity={0}
-              key={movie.id}
+              key={movie.title}
               id={movie.id}
               title={movie.title}
               poster={movie.poster}

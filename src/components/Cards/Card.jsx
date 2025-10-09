@@ -1,12 +1,12 @@
 'use client';
-
+import React from 'react';
 import { useState } from 'react';
 import { ProgressiveBlur } from '../ui/progressive-blur';
 import { motion } from 'framer-motion'; // Corrected the import for motion
 import { useNavigate } from 'react-router-dom';
 import HeartFavourites from './HeartFavourites';
 
-export default function Card({ id, title, poster, rating, visiblity }) {
+export default React.memo(function Card({ id, title, poster, rating, visiblity }) {
   const [isHover, setIsHover] = useState(false);
   const naviagte = useNavigate();
 
@@ -64,4 +64,4 @@ export default function Card({ id, title, poster, rating, visiblity }) {
       </motion.div>
     </div>
   );
-}
+});

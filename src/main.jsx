@@ -1,16 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Dashboard from './Pages/Dashboard.jsx'
-import Favourites from './Pages/Favourites.jsx'
-import NotFound from './Pages/NotFound.jsx'
-import Search from './Pages/Search.jsx'
-import MoviesDetail from './Pages/Movie/MoviesDetail.jsx'
-import MovieDescription from './Pages/Movie/MovieDescription.jsx'
-import Home from './Pages/Home.jsx'
-import Explore from './Pages/Explore.jsx'
+import { StrictMode, lazy, Suspense } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const Dashboard = lazy(() => import('./Pages/Dashboard.jsx'));
+const Favourites = lazy(() => import('./Pages/Favourites.jsx'));
+const NotFound = lazy(() => import('./Pages/NotFound.jsx'));
+const Search = lazy(() => import('./Pages/Search.jsx'));
+const MoviesDetail = lazy(() => import('./Pages/Movie/MoviesDetail.jsx'));
+const MovieDescription = lazy(() => import('./Pages/Movie/MovieDescription.jsx'));
+const Home = lazy(() => import('./Pages/Home.jsx'));
+const Explore = lazy(() => import('./Pages/Explore.jsx'));
 
 const router = createBrowserRouter([
   {
@@ -19,44 +20,76 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />
+        element: (
+          <Suspense fallback={null}>
+            <Dashboard />
+          </Suspense>
+        ),
       },
       {
-        path : "home",
-        element : <Home />
+        path: "home",
+        element: (
+          <Suspense fallback={null}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "favorites",
-        element: <Favourites />
+        element: (
+          <Suspense fallback={null}>
+            <Favourites />
+          </Suspense>
+        ),
       },
       {
         path: "Search",
-        element: <Search />
+        element: (
+          <Suspense fallback={null}>
+            <Search />
+          </Suspense>
+        ),
       },
       {
         path: "explore",
-        element: <MoviesDetail />,
-        children : [
+        element: (
+          <Suspense fallback={null}>
+            <MoviesDetail />
+          </Suspense>
+        ),
+        children: [
           {
-            index : true ,
-            element : <Explore />
+            index: true,
+            element: (
+              <Suspense fallback={null}>
+                <Explore />
+              </Suspense>
+            ),
           },
           {
-            path : ":title",
-            element : <MovieDescription />
+            path: ":title",
+            element: (
+              <Suspense fallback={null}>
+                <MovieDescription />
+              </Suspense>
+            ),
           },
-        ]
+        ],
       },
       {
         path: "*",
-        element: <NotFound />
-      }
-    ]
-  }
-])
+        element: (
+          <Suspense fallback={null}>
+            <NotFound />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+  </StrictMode>
+);

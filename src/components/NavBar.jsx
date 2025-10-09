@@ -13,7 +13,7 @@ const NavBar = () => {
 
     return (
         <header>
-            <nav className='bg-slate-100 dark:bg-[#111826] text-slate-900 dark:text-white px-4 py-4 flex items-center w-full shadow-md shadow-slate-200 dark:shadow-black/20 duration-300'>
+            <nav className='bg-slate-100 dark:bg-[#111826] text-slate-900 dark:text-white px-4 py-4 flex items-center w-full shadow-md shadow-slate-200 dark:shadow-black/20 sm:duration-300'>
 
                 <div className='flex-1'>
                     <Link to="/" className='flex items-center gap-x-3'>

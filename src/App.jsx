@@ -12,7 +12,7 @@ function App() {
 
     <ThemeProvider >
       <FavouritesProvider>
-        <main className='min-h-screen w-screen dark:bg-[#111826] bg-slate-100 dark:text-white text-black font-Poppins flex flex-col duration-300' >
+        <main className='min-h-screen w-screen dark:bg-[#111826] bg-slate-100 dark:text-white text-black font-Poppins flex flex-col sm:duration-300' >
           <NavBar />
           <section className=' flex flex-grow flex-col items-center'>
             <Outlet />
