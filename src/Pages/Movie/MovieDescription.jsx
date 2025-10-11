@@ -86,7 +86,7 @@ const MovieDescription = () => {
 
           <div className="flex-shrink-0 w-full md:w-1/3 ">
             <img
-              src={movieData?.Poster}
+              src={(movieData?.Poster != "N/A") ? (movieData?.Poster) : `https://placehold.co/383x574/333333/FFF?text=${movieData.Title}`}
               alt='Poster not found'
               className="sm:w-full rounded-xl shadow-2xl mx-auto sm:aspect-[2/3] object-cover transition-transform duration-300 ease-in-out hover:scale-105 text-2xl bg-neutral-300 dark:bg-neutral-700 text-center text-black dark:text-white font-semibold"
             />
