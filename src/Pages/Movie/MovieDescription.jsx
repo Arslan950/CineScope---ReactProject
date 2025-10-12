@@ -122,7 +122,7 @@ const MovieDescription = () => {
               <HeartFavourites
                 SVGClassName='hidden'
                 title={movieData?.Title}
-                poster={movieData.Poster}
+                poster={(movieData?.Poster != "N/A") ? (movieData?.Poster) : `https://placehold.co/383x574/333333/FFF?text=${movieData.Title}`}
                 rating={movieData?.Ratings?.[0]?.Value}
                 id={favouritesList.find(m => m.title === movieData?.Title)?.id}
               >
