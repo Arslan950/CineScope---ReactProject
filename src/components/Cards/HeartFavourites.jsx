@@ -1,8 +1,8 @@
 import React, { useMemo ,useCallback} from 'react';
-import { useFavourites } from '../../context/favourites';
+import { useFavouritesStore } from '../../store/FavouritesStore';
 
 const HeartFavourites = ({ id, title, poster, rating, onClick, children, className = "", SVGClassName = "" }) => {
-    const { favouritesList, addFavourites, removeFavourites } = useFavourites();
+    const { favouritesList, addFavourites, removeFavourites } = useFavouritesStore();
 
     const isFavourited = useMemo(() => {
         return favouritesList.some((movie) => movie.title === title);
@@ -17,7 +17,7 @@ const HeartFavourites = ({ id, title, poster, rating, onClick, children, classNa
                 title: title,
                 poster: poster,
                 ratings: rating
-            }, title);
+            });
         } else {
             const movieToRemove = favouritesList.find((movie) => movie.title === title);
             if (movieToRemove) {

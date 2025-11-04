@@ -4,12 +4,12 @@ import logo from '../assets/logo.svg'
 import { motion } from 'motion/react'
 import { NavLink, Link } from 'react-router-dom'
 import ThemeBtn from './ThemeBtn'
-import { useTheme } from '../context/theme'
+import { useThemeStore } from '../store/ThemeStore'
 
 const NavBar = () => {
     const [dropdownFlag, setDropdownFlag] = useState(false)
 
-    const { theme } = useTheme()
+    const theme = useThemeStore((state) => state.theme);
 
     return (
         <header>

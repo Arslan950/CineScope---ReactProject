@@ -10,20 +10,17 @@ import { motion } from 'motion/react'
 import { useNavigate } from 'react-router-dom'
 import SearchBar from '../../components/SearchBar'
 import HeartFavourites from '../../components/Cards/HeartFavourites'
-import { useFavourites } from '../../context/favourites'
+import { useFavouritesStore } from '../../store/FavouritesStore'
 import useFetchDetails from '../../hooks/useFetchDetails'
 
 const MovieDescription = () => {
   const { title } = useParams();
   const navigate = useNavigate();
   const [isFavourited, setIsFavourited] = useState(false);
-  const { favouritesList } = useFavourites();
+  const { favouritesList } = useFavouritesStore();
   const scrollTargetRef = useRef(null);
 
   const { movieData, loading } = useFetchDetails(title);
-
-
-
 
   useEffect(() => {
     if (movieData && movieData.Title) {
@@ -45,7 +42,6 @@ const MovieDescription = () => {
       <MoviesDetailsSkeletons />
     )
   }
-
 
   if (movieData?.Response === 'False') {
     return (
