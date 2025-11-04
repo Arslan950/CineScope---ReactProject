@@ -11,34 +11,19 @@ import { useNavigate } from 'react-router-dom'
 import SearchBar from '../../components/SearchBar'
 import HeartFavourites from '../../components/Cards/HeartFavourites'
 import { useFavourites } from '../../context/favourites'
-
+import useFetchDetails from '../../hooks/useFetchDetails'
 
 const MovieDescription = () => {
   const { title } = useParams();
-  const [movieData, setmovieData] = useState({});
-  const [loading, setloading] = useState(true);
   const navigate = useNavigate();
   const [isFavourited, setIsFavourited] = useState(false);
   const { favouritesList } = useFavourites();
-  const apiKey = import.meta.env.VITE_OMDB_API_KEY;
   const scrollTargetRef = useRef(null);
 
+  const { movieData, loading } = useFetchDetails(title);
 
 
-  useEffect(() => {
-    setloading(true);
-    const getData = async () => {
-      try {
-        const response = await axios.get(`https://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
-        setmovieData(response.data);
-      } catch (error) {
-        console.log("error fetching data ", error);
-      } finally {
-        setloading(false);
-      }
-    };
-    getData();
-  }, [title, apiKey]);
+
 
   useEffect(() => {
     if (movieData && movieData.Title) {
