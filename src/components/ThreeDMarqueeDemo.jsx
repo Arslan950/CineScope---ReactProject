@@ -38,10 +38,6 @@ export function ThreeDMarqueeDemo() {
             </div>
 
             {/* {mobile} */}
-
-
-
-
             <div className="min-h-screen w-full relative sm:hidden">
                 <div
                     className="absolute inset-0 z-0 bg-[radial-gradient(125%_125%_at_50%_10%,#f1f5f9_40%,#7c3aed_100%)] dark:bg-[radial-gradient(125%_125%_at_50%_10%,#111826_40%,#7c3aed_100%)]"
