@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 
-// Helper function to load the initial list from localStorage
 const getInitialFavourites = () => {
   const savedFavourites = localStorage.getItem('favourites');
   return savedFavourites ? JSON.parse(savedFavourites) : []; 

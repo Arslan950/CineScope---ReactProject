@@ -12,6 +12,7 @@ const MoviesDetail = lazy(() => import('./Pages/Movie/MoviesDetail.jsx'));
 const MovieDescription = lazy(() => import('./Pages/Movie/MovieDescription.jsx'));
 const Home = lazy(() => import('./Pages/Home.jsx'));
 const Explore = lazy(() => import('./Pages/Explore.jsx'));
+const Loading = lazy(() => import('./components/Loading.jsx'))
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <Dashboard />
           </Suspense>
         ),
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: (
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <Home />
           </Suspense>
         ),
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: (
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <Favourites />
           </Suspense>
         ),
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "Search",
         element: (
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <Search />
           </Suspense>
         ),
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: "explore",
         element: (
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <MoviesDetail />
           </Suspense>
         ),
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: (
-              <Suspense fallback={null}>
+              <Suspense fallback={<Loading />}>
                 <Explore />
               </Suspense>
             ),
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
           {
             path: ":title",
             element: (
-              <Suspense fallback={null}>
+              <Suspense fallback={<Loading />}>
                 <MovieDescription />
               </Suspense>
             ),
@@ -79,7 +80,7 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: (
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <NotFound />
           </Suspense>
         ),
