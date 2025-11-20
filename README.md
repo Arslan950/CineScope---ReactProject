@@ -1,4 +1,5 @@
 <div align="center">
+<img src="./src/assets/logo.svg" alt="CineScope Logo" width="100" />
 
 # CineScope
 
@@ -17,16 +18,9 @@ _Built with the tools and technologies:_
 
 <br>
 
-<img alt="JSON" src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white">
-<img alt="Markdown" src="https://img.shields.io/badge/Markdown-000000.svg?style=flat&logo=Markdown&logoColor=white">
-<img alt="npm" src="https://img.shields.io/badge/npm-CB3837.svg?style=flat&logo=npm&logoColor=white">
-<img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black">
-<img alt="DaisyUI" src="https://img.shields.io/badge/DaisyUI-1AD1A5.svg?style=flat&logo=DaisyUI&logoColor=white">
-<br>
-<img alt="React" src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black">
-<img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF.svg?style=flat&logo=Vite&logoColor=white">
-<img alt="ESLint" src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=ESLint&logoColor=white">
-<img alt="Axios" src="https://img.shields.io/badge/Axios-5A29E4.svg?style=flat&logo=Axios&logoColor=white">
+<a href="https://react.dev/" target="_blank"><img alt="React" src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" /></a>&nbsp;&nbsp;&nbsp;<a href="https://vitejs.dev/" target="_blank"><img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;<a href="https://tailwindcss.com/" target="_blank"><img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/pmndrs/zustand" target="_blank"><img alt="Zustand" src="https://img.shields.io/badge/Zustand-443E38?style=flat&logo=react&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;<a href="https://axios-http.com/" target="_blank"><img alt="Axios" src="https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white" /></a>
+
+<a href="https://www.framer.com/motion/" target="_blank"><img alt="Framer Motion" src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;<a href="https://ui.aceternity.com/" target="_blank"><img alt="Aceternity UI" src="https://img.shields.io/badge/Aceternity_UI-222222?style=flat&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;<a href="https://daisyui.com/" target="_blank"><img alt="DaisyUI" src="https://img.shields.io/badge/DaisyUI-1AD1A5?style=flat&logo=daisyui&logoColor=white" /></a>
 
 </div>
 
@@ -71,23 +65,49 @@ Make sure you have Node.js and npm installed on your machine.
 
 1.  Clone the repo
     ```sh
-    git clone [https://github.com/Arslan950/CineScope---ReactProject.git](https://github.com/Arslan950/CineScope---ReactProject.git)
+    git clone https://github.com/Arslan950/CineScope---ReactProject.git
     ```
 2.  Install NPM packages
     ```sh
     npm install
     ```
-3.  Enter your API in a `.env` file
+3.  Enter your API Key in a `.env` file
     ```JS
-    VITE_OMDB_API_KEY = 'YOUR API'
+    VITE_OMDB_API_KEY = 'YOUR API KEY'
     ```
 4.  Run the application
     ```sh
     npm run dev
     ```
 
+## Project Structure
+
+```text
+CineScope/
+├── src/
+│   ├── animation/       # Lottie JSON animations
+│   ├── assets/          # Static assets (Logos, Images)
+│   ├── components/      # Reusable UI components
+│   │   ├── Cards/       # Movie display cards
+│   │   ├── ui/          # Aceternity/Primitive UI elements
+│   │   └── ...
+│   ├── hooks/           # Custom hooks (useFetchDetails)
+│   ├── MoviesDB/        # Static movie lists (Trending, Bollywood)
+│   ├── Pages/           # Application Views (Home, Explore, MovieDetail)
+│   ├── store/           # Zustand state management (Theme, Favourites)
+│   ├── App.jsx          # Main layout structure
+│   └── main.jsx         # Entry point & Routing
+└── ...
+```
+
+
+
+
+
+
+
 ## **Contact**
 
-Arslan - arslan48950@gmail.com
+Email : arslan48950@gmail.com
 
-Project Link: [https://cinescope-liart-eight.vercel.app/](https://cinescope-liart-eight.vercel.app/)
+Project Link : [https://cinescope-liart-eight.vercel.app/](https://cinescope-liart-eight.vercel.app/)
